@@ -20,7 +20,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
 
     @Override
     public boolean isPrime(int p) {
-        return primeNumberArray.contains(p);
+        return primeNumberArray[p];
     }
 
     @Override
