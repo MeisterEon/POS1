@@ -1,7 +1,7 @@
 package net.htlgkr.adlesgrubers22054.pos2.primechecker;
 
 public class EratosthenesPrimeSieve implements PrimeSieve{
-    private Boolean[] primeNumberArray;
+    private final Boolean[] primeNumberArray;
 
     public EratosthenesPrimeSieve(int limit) {
         primeNumberArray = new Boolean[limit];
@@ -11,7 +11,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
 
         for (int i = 2; i < Math.sqrt(limit); i++) {
             if (primeNumberArray[i]) {
-                for (j = i * i; i < limit; i += i) {
+                for (int j = i * i; i < limit; i += i) {
                     primeNumberArray[j] = false;
                 }
             }
@@ -25,8 +25,10 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
 
     @Override
     public void printPrimes() {
-        for (Integer i : primeNumberArray) {
-            System.out.println(i);
+        for (int i = 2; i < primeNumberArray.length; i++) {
+            if (primeNumberArray[i]) {
+                System.out.println(i);
+            }
         }
     }
 }
