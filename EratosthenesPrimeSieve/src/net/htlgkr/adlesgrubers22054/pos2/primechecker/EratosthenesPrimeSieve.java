@@ -8,16 +8,17 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
 
     public EratosthenesPrimeSieve(int limit) {
         this.limit = limit;
-
     }
 
     @Override
     public boolean isPrime(int p) {
-        return false;
+        return numberList.contains(p);
     }
 
     @Override
     public void printPrimes() {
-
+        for (Integer i : numberList) {
+            System.out.println(i);
+        }
     }
 }
